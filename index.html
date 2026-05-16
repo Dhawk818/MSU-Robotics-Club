@@ -1,1 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSU Denver Robotics Club</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="nav-wrap" aria-label="Primary navigation">
+      <a class="brand" href="#home" data-route="home" aria-label="MSU Denver Robotics Club Home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="7" width="14" height="12" rx="2"></rect>
+            <path d="M12 7V3"></path>
+            <path d="M8 3h8"></path>
+            <path d="M9 12h.01"></path>
+            <path d="M15 12h.01"></path>
+            <path d="M9 16h6"></path>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong id="brandTitle">MSU Denver Robotics</strong>
+          <small id="brandSubtitle">Club Portal</small>
+        </span>
+      </a>
 
+      <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Open navigation">Menu</button>
+
+      <div class="nav-links" id="navLinks">
+        <button class="nav-link active" data-route="home">Home</button>
+        <button class="nav-link" data-scroll="aboutSection">About</button>
+        <button class="nav-link" data-scroll="processSection">Process</button>
+        <button class="nav-link" data-scroll="projectsSection">Projects</button>
+        <button class="nav-link" data-scroll="eventsSection">Events</button>
+        <button class="nav-link" data-scroll="faqSection">FAQ</button>
+        <button class="nav-link logged-in-only hidden" data-route="dashboard">Dashboard</button>
+        <button class="nav-link admin-only hidden" data-route="admin">Admin</button>
+        <button class="nav-link login-link logged-out-only" data-route="login">Log In</button>
+        <button class="nav-link register-link logged-out-only" data-route="register">Register</button>
+        <span class="role-badge logged-in-only hidden" id="roleBadge">Role</span>
+        <button class="logout-btn logged-in-only hidden" id="logoutBtn" type="button">Logout</button>
+        <button class="nav-link get-started-link" data-scroll="contactSection">Get Started</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page active" id="home">
+      <div class="site-shell">
+        <section class="hero-section" id="heroSection">
+          <div class="hero-copy">
+            <div class="section-kicker" id="heroKicker"></div>
+            <h1 id="heroTitle"></h1>
+            <p id="heroDescription"></p>
+
+            <div class="hero-actions">
+              <button class="btn btn-primary" id="heroPrimaryButton" data-scroll="contactSection"></button>
+              <button class="btn btn-secondary" id="heroSecondaryButton" data-scroll="projectsSection"></button>
+            </div>
+
+            <div class="hero-metrics" aria-label="Club highlights">
+              <div class="metric-box">
+                <strong id="memberCountStat">0</strong>
+                <span id="metricOneLabel">Sign-ups</span>
+              </div>
+              <div class="metric-box">
+                <strong id="projectCountStat">6</strong>
+                <span id="metricTwoLabel">Active Tracks</span>
+              </div>
+              <div class="metric-box">
+                <strong id="eventCountStat">4</strong>
+                <span id="metricThreeLabel">Club Events</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="robot-showcase" aria-label="Robotics showcase illustration">
+            <div class="orbital-ring"></div>
+            <div class="robot-device" aria-hidden="true">
+              <div class="robot-body"></div>
+              <div class="robot-frame"></div>
+              <div class="robot-light"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="logo-strip" id="focusStrip" aria-label="Club focus areas"></section>
+
+        <section class="section-block" id="aboutSection">
+          <div class="about-grid">
+            <div class="mini-device-wrap" aria-hidden="true">
+              <div class="robot-device">
+                <div class="robot-body"></div>
+                <div class="robot-frame"></div>
+                <div class="robot-light"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="section-kicker" id="aboutKicker"></div>
+              <h2 id="aboutTitle"></h2>
+              <p id="aboutDescription"></p>
+              <div class="spec-table" id="aboutSpecs" aria-label="Club details"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block" id="processSection">
+          <div class="section-header">
+            <div class="section-kicker" id="processKicker"></div>
+            <h2 id="processTitle"></h2>
+            <p id="processDescription"></p>
+          </div>
+
+          <div class="process-grid" id="processGrid"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="video-panel" aria-label="Robotics showcase preview">
+            <button class="play-button" type="button" data-scroll="projectsSection" aria-label="View projects">▶</button>
+            <div class="video-caption">
+              <div class="section-kicker" id="showcaseKicker"></div>
+              <h2 id="showcaseTitle"></h2>
+              <p id="showcaseDescription"></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block" id="projectsSection">
+          <div class="section-header">
+            <div class="section-kicker" id="projectsKicker"></div>
+            <h2 id="projectsTitle"></h2>
+            <p id="projectsDescription"></p>
+          </div>
+
+          <div class="filters" aria-label="Project filters" id="projectFilters">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="competition">Competition</button>
+            <button class="chip" data-filter="ai">AI / Vision</button>
+            <button class="chip" data-filter="hardware">Hardware</button>
+            <button class="chip" data-filter="beginner">Beginner</button>
+          </div>
+
+          <div class="focus-grid" id="projectGrid"></div>
+        </section>
+
+        <section class="section-block" id="eventsSection">
+          <div class="section-header">
+            <div class="section-kicker" id="eventsKicker"></div>
+            <h2 id="eventsTitle"></h2>
+            <p id="eventsDescription"></p>
+          </div>
+
+          <div class="event-list" id="eventList"></div>
+        </section>
+
+        <section class="section-block" id="teamSection">
+          <div class="section-header">
+            <div class="section-kicker" id="teamKicker"></div>
+            <h2 id="teamTitle"></h2>
+            <p id="teamDescription"></p>
+          </div>
+
+          <div class="team-grid" id="teamGrid"></div>
+        </section>
+
+        <section class="section-block" id="faqSection">
+          <div class="section-header">
+            <div class="section-kicker" id="faqKicker"></div>
+            <h2 id="faqTitle"></h2>
+            <p id="faqDescription"></p>
+          </div>
+
+          <div class="faq-list" id="faqList"></div>
+        </section>
+
+        <section class="section-block" id="contactSection">
+          <div class="contact-grid">
+            <div class="content-card contact-info">
+              <div class="section-kicker" id="contactKicker"></div>
+              <h2 id="contactTitle"></h2>
+              <p id="contactDescription"></p>
+              <div class="hero-actions">
+                <button class="btn btn-secondary" data-route="register">Register Account</button>
+                <button class="btn btn-secondary" data-route="login">Member Login</button>
+              </div>
+            </div>
+
+            <div class="content-card">
+              <form id="joinForm">
+                <div class="form-grid">
+                  <label>
+                    Full name
+                    <input id="name" type="text" autocomplete="name" required />
+                  </label>
+                  <label>
+                    Email
+                    <input id="email" type="email" autocomplete="email" required />
+                  </label>
+                </div>
+                <div class="form-grid">
+                  <label>
+                    Experience level
+                    <select id="level" required>
+                      <option value="">Select one</option>
+                      <option>Beginner</option>
+                      <option>Intermediate</option>
+                      <option>Advanced</option>
+                    </select>
+                  </label>
+                  <label>
+                    Main interest
+                    <select id="interest" required>
+                      <option value="">Select one</option>
+                      <option>Programming</option>
+                      <option>Mechanical Design</option>
+                      <option>Electronics</option>
+                      <option>AI / Computer Vision</option>
+                      <option>Competition Team</option>
+                    </select>
+                  </label>
+                </div>
+                <label>
+                  Why do you want to join?
+                  <textarea id="reason" required></textarea>
+                </label>
+                <div class="hero-actions">
+                  <button class="btn btn-primary" type="submit">Submit Interest</button>
+                  <button class="btn btn-secondary admin-only hidden" type="button" id="clearMembers">Clear Demo Sign-Ups</button>
+                </div>
+              </form>
+              <div class="join-results admin-only hidden" id="memberList" aria-live="polite"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="page" id="login">
+      <div class="site-shell">
+        <div class="auth-layout">
+          <div class="auth-panel large-text">
+            <div class="section-kicker">Portal Access</div>
+            <h1>Log in to the club portal.</h1>
+            <p>
+              Public visitors can explore the main site without logging in. Members can access the dashboard, and admins can manage site content, events, projects, FAQs, team cards, sign-ups, and theme colors.
+            </p>
+            <div class="notice">
+              Demo accounts are listed here for testing. Real admin security should be connected to Firebase, Supabase, Auth0, or a backend before official use.
+            </div>
+            <div class="demo-accounts" aria-label="Demo login accounts">
+              <div class="demo-account">
+                <strong>Admin Demo</strong>
+                Email: admin@msudenver.edu<br />
+                Password: Admin123!
+              </div>
+              <div class="demo-account">
+                <strong>Member Demo</strong>
+                Email: member@msudenver.edu<br />
+                Password: Member123!
+              </div>
+            </div>
+          </div>
+
+          <div class="auth-panel">
+            <div class="section-kicker">Sign In</div>
+            <h2>Welcome back.</h2>
+            <form id="loginForm">
+              <label>
+                Email
+                <input id="loginEmail" type="email" autocomplete="email" required />
+              </label>
+              <label>
+                Password
+                <input id="loginPassword" type="password" autocomplete="current-password" required />
+              </label>
+              <button class="btn btn-primary" type="submit">Log In</button>
+            </form>
+            <p class="auth-switch">New here? <button type="button" data-route="register">Register instead</button></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="register">
+      <div class="site-shell">
+        <div class="auth-layout">
+          <div class="auth-panel large-text">
+            <div class="section-kicker">Register</div>
+            <h1>Create a member profile.</h1>
+            <p>
+              Registration creates a non-admin member account in this browser demo. After registering, you can log in and access the member dashboard.
+            </p>
+            <div class="notice">
+              Static GitHub Pages cannot protect real passwords by itself. This registration is for prototype/demo use until a backend is connected.
+            </div>
+          </div>
+
+          <div class="auth-panel">
+            <div class="section-kicker">New Member</div>
+            <h2>Register interest.</h2>
+            <form id="registerForm">
+              <label>
+                Full name
+                <input id="registerName" type="text" autocomplete="name" required />
+              </label>
+              <label>
+                Email
+                <input id="registerEmail" type="email" autocomplete="email" required />
+              </label>
+              <label>
+                Password
+                <input id="registerPassword" type="password" autocomplete="new-password" minlength="6" required />
+              </label>
+              <label>
+                Main interest
+                <select id="registerInterest" required>
+                  <option value="">Select one</option>
+                  <option>Programming</option>
+                  <option>Mechanical Design</option>
+                  <option>Electronics</option>
+                  <option>AI / Computer Vision</option>
+                  <option>Competition Team</option>
+                </select>
+              </label>
+              <button class="btn btn-primary" type="submit">Create Member Account</button>
+            </form>
+            <p class="auth-switch">Already registered? <button type="button" data-route="login">Log in instead</button></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="dashboard">
+      <div class="site-shell section-block">
+        <div class="section-header">
+          <div class="section-kicker">Control Center</div>
+          <h2>Member Dashboard</h2>
+          <p id="dashboardWelcome">Welcome back. Your role controls what tools you can access.</p>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="content-card">
+            <span class="card-number">Events</span>
+            <h3 id="dashboardEvents">0</h3>
+            <p>Events available for club members.</p>
+          </article>
+          <article class="content-card">
+            <span class="card-number">Projects</span>
+            <h3 id="dashboardProjects">0</h3>
+            <p>Project tracks currently listed on the site.</p>
+          </article>
+          <article class="content-card">
+            <span class="card-number">Access</span>
+            <h3 id="dashboardRole">Member</h3>
+            <p>Current portal role and permission level.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page admin-only hidden" id="admin">
+      <div class="site-shell section-block">
+        <div class="section-header">
+          <div class="section-kicker">Admin Systems</div>
+          <h2>Admin Control Panel</h2>
+          <p>Admin has full browser-demo control over the content and structure of the SPA.</p>
+        </div>
+
+        <div class="notice">
+          These edits save to localStorage in this browser. For a real public club site, connect this admin system to a database and secure backend authentication.
+        </div>
+
+        <div class="admin-section">
+          <div class="section-header">
+            <h2>Site Content Editor</h2>
+            <p>Edit major site text, lists, cards, projects, events, FAQs, team cards, and theme colors.</p>
+          </div>
+
+          <div class="editor-grid">
+            <div class="content-card">
+              <div class="editor-tabs" id="editorTabs"></div>
+              <div id="editorForms"></div>
+            </div>
+
+            <div class="content-card">
+              <h3>Full Site JSON Editor</h3>
+              <p>This gives admin access to modify nearly every content item in one place. Edit carefully, then apply.</p>
+              <textarea class="json-editor" id="siteJsonEditor" spellcheck="false"></textarea>
+              <div class="hero-actions">
+                <button class="btn btn-primary" type="button" id="applyJsonButton">Apply JSON</button>
+                <button class="btn btn-secondary" type="button" id="downloadJsonButton">Download JSON</button>
+                <button class="btn btn-danger" type="button" id="resetSiteContentButton">Reset Site Content</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-section">
+          <div class="section-header">
+            <h2>Quick Add Tools</h2>
+            <p>Add new events and projects without opening the full JSON editor.</p>
+          </div>
+
+          <div class="admin-grid">
+            <article class="content-card">
+              <h3>Add Event</h3>
+              <form id="adminEventForm">
+                <div class="form-grid">
+                  <label>
+                    Month
+                    <input id="adminEventMonth" type="text" maxlength="3" placeholder="SEP" required />
+                  </label>
+                  <label>
+                    Day
+                    <input id="adminEventDay" type="text" maxlength="2" placeholder="12" required />
+                  </label>
+                </div>
+                <label>
+                  Event title
+                  <input id="adminEventTitle" type="text" required />
+                </label>
+                <label>
+                  Details
+                  <textarea id="adminEventDetails" required></textarea>
+                </label>
+                <label>
+                  Location
+                  <input id="adminEventLocation" type="text" required />
+                </label>
+                <button class="btn btn-primary" type="submit">Add Event</button>
+              </form>
+            </article>
+
+            <article class="content-card">
+              <h3>Add Project</h3>
+              <form id="adminProjectForm">
+                <label>
+                  Project title
+                  <input id="adminProjectTitle" type="text" required />
+                </label>
+                <label>
+                  Description
+                  <textarea id="adminProjectDescription" required></textarea>
+                </label>
+                <label>
+                  Tags
+                  <input id="adminProjectTags" type="text" placeholder="competition, hardware, beginner" required />
+                </label>
+                <button class="btn btn-primary" type="submit">Add Project</button>
+              </form>
+            </article>
+
+            <article class="content-card">
+              <h3>Admin Tools</h3>
+              <p>Reset demo data or clear submitted interest forms.</p>
+              <div class="hero-actions">
+                <button class="btn btn-secondary" id="resetDemoData" type="button">Reset Demo Data</button>
+                <button class="btn btn-danger" id="clearAllMembers" type="button">Clear Sign-Ups</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="admin-section">
+          <div class="section-header">
+            <h2>Submitted Sign-Ups</h2>
+            <p>Only admins can view this demo list.</p>
+          </div>
+          <div class="admin-list" id="adminMemberList"></div>
+        </div>
+
+        <div class="admin-section">
+          <div class="section-header">
+            <h2>Manage Events</h2>
+            <p>Delete demo events from the visible events list.</p>
+          </div>
+          <div class="admin-list" id="adminEventList"></div>
+        </div>
+
+        <div class="admin-section">
+          <div class="section-header">
+            <h2>Manage Projects</h2>
+            <p>Delete demo projects from the visible project list.</p>
+          </div>
+          <div class="admin-list" id="adminProjectList"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="site-shell">
+      <p id="footerText">MSU Denver Robotics Club - Dark Robotics Launch Standard</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
