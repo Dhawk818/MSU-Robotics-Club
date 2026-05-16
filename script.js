@@ -23,6 +23,34 @@ const defaultSiteContent = {
     metricThreeLabel: "Club Events"
   },
   focusStrip: ["Programming", "Electronics", "Mechanical", "Competition"],
+  gallerySection: {
+    kicker: "Robotics In Action",
+    title: "See the kind of future we are building.",
+    description: "Robotics is not just code. It is machines, circuits, teamwork, testing, design, and problem-solving coming together."
+  },
+  gallery: [
+    {
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1000&q=80",
+      alt: "Humanoid robot technology display",
+      label: "Automation",
+      title: "Robotics Systems",
+      tall: false
+    },
+    {
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80",
+      alt: "Electronic circuit board close up",
+      label: "Electronics",
+      title: "Circuits and Sensors",
+      tall: true
+    },
+    {
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80",
+      alt: "Student working with technology",
+      label: "Team Build",
+      title: "Hands-On Learning",
+      tall: false
+    }
+  ],
   about: {
     kicker: "About The Club",
     title: "Where curiosity turns into working machines.",
@@ -259,8 +287,36 @@ function cloneData(data) {
   return JSON.parse(JSON.stringify(data));
 }
 
+function deepMerge(defaultValue, savedValue) {
+  if (Array.isArray(defaultValue)) {
+    return Array.isArray(savedValue) ? savedValue : cloneData(defaultValue);
+  }
+
+  if (
+    defaultValue &&
+    typeof defaultValue === "object" &&
+    !Array.isArray(defaultValue)
+  ) {
+    const result = cloneData(defaultValue);
+    const savedObject = savedValue && typeof savedValue === "object" ? savedValue : {};
+
+    Object.keys(savedObject).forEach(key => {
+      if (key in defaultValue) {
+        result[key] = deepMerge(defaultValue[key], savedObject[key]);
+      } else {
+        result[key] = savedObject[key];
+      }
+    });
+
+    return result;
+  }
+
+  return savedValue === undefined || savedValue === null ? defaultValue : savedValue;
+}
+
 function getSiteContent() {
-  return readData(storageKeys.siteContent, cloneData(defaultSiteContent));
+  const savedContent = readData(storageKeys.siteContent, {});
+  return deepMerge(defaultSiteContent, savedContent);
 }
 
 function saveSiteContent(content) {
@@ -350,6 +406,22 @@ function renderSiteContent() {
 
   document.getElementById("focusStrip").innerHTML = content.focusStrip
     .map(item => `<div class="logo-pill">${escapeHtml(item)}</div>`)
+    .join("");
+
+  setText("galleryKicker", content.gallerySection.kicker);
+  setText("galleryTitle", content.gallerySection.title);
+  setText("galleryDescription", content.gallerySection.description);
+
+  document.getElementById("galleryGrid").innerHTML = content.gallery
+    .map(item => `
+      <article class="photo-card ${item.tall ? "tall" : ""}">
+        <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.alt)}" />
+        <div class="photo-overlay">
+          <span>${escapeHtml(item.label)}</span>
+          <h3>${escapeHtml(item.title)}</h3>
+        </div>
+      </article>
+    `)
     .join("");
 
   setText("aboutKicker", content.about.kicker);
@@ -627,6 +699,8 @@ function renderEditorTabs() {
     "theme",
     "hero",
     "focusStrip",
+    "gallerySection",
+    "gallery",
     "about",
     "process",
     "showcase",
