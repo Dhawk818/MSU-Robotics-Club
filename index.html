@@ -31,11 +31,12 @@
 
       <div class="nav-links" id="navLinks">
         <button class="nav-link active" data-route="home">Home</button>
-        <button class="nav-link" data-scroll="aboutSection">About</button>
-        <button class="nav-link" data-scroll="processSection">Process</button>
-        <button class="nav-link" data-scroll="projectsSection">Projects</button>
-        <button class="nav-link" data-scroll="eventsSection">Events</button>
-        <button class="nav-link" data-scroll="faqSection">FAQ</button>
+        <a class="nav-link" href="#aboutSection" data-scroll="aboutSection">About</a>
+        <a class="nav-link" href="#processSection" data-scroll="processSection">Process</a>
+        <a class="nav-link" href="#projectsSection" data-scroll="projectsSection">Projects</a>
+        <a class="nav-link" href="#gallerySection" data-scroll="gallerySection">Gallery</a>
+        <a class="nav-link" href="#eventsSection" data-scroll="eventsSection">Events</a>
+        <a class="nav-link" href="#faqSection" data-scroll="faqSection">FAQ</a>
         <button class="nav-link logged-in-only hidden" data-route="dashboard">Dashboard</button>
         <button class="nav-link admin-only hidden" data-route="admin">Admin</button>
         <button class="nav-link login-link logged-out-only" data-route="login">Log In</button>
@@ -52,13 +53,15 @@
       <div class="site-shell">
         <section class="hero-section" id="heroSection">
           <div class="hero-copy">
-            <div class="section-kicker" id="heroKicker"></div>
-            <h1 id="heroTitle"></h1>
-            <p id="heroDescription"></p>
+            <div class="section-kicker" id="heroKicker">Advanced Robotics Division</div>
+            <h1 id="heroTitle">Build robots. Learn systems. Compete together.</h1>
+            <p id="heroDescription">
+              MSU Denver Robotics Club is a student-built robotics community for programmers, designers, engineers, makers, and curious beginners. Explore autonomous builds, electronics, AI, mechanical design, and competition-ready prototypes.
+            </p>
 
             <div class="hero-actions">
-              <button class="btn btn-primary" id="heroPrimaryButton" data-scroll="contactSection"></button>
-              <button class="btn btn-secondary" id="heroSecondaryButton" data-scroll="projectsSection"></button>
+              <button class="btn btn-primary" id="heroPrimaryButton" data-scroll="contactSection">Get Started</button>
+              <button class="btn btn-secondary" id="heroSecondaryButton" data-scroll="projectsSection">Discover Projects</button>
             </div>
 
             <div class="hero-metrics" aria-label="Club highlights">
@@ -87,7 +90,48 @@
           </div>
         </section>
 
-        <section class="logo-strip" id="focusStrip" aria-label="Club focus areas"></section>
+        <section class="logo-strip" id="focusStrip" aria-label="Club focus areas">
+          <div class="logo-pill">Programming</div>
+          <div class="logo-pill">Electronics</div>
+          <div class="logo-pill">Mechanical</div>
+          <div class="logo-pill">Competition</div>
+        </section>
+
+        <section class="section-block" id="gallerySection">
+          <div class="section-header">
+            <div class="section-kicker" id="galleryKicker">Robotics In Action</div>
+            <h2 id="galleryTitle">See the kind of future we are building.</h2>
+            <p id="galleryDescription">
+              Robotics is not just code. It is machines, circuits, teamwork, testing, design, and problem-solving coming together.
+            </p>
+          </div>
+
+          <div class="photo-grid" id="galleryGrid">
+            <article class="photo-card">
+              <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1000&q=80" alt="Humanoid robot technology display" />
+              <div class="photo-overlay">
+                <span>Automation</span>
+                <h3>Robotics Systems</h3>
+              </div>
+            </article>
+
+            <article class="photo-card tall">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80" alt="Electronic circuit board close up" />
+              <div class="photo-overlay">
+                <span>Electronics</span>
+                <h3>Circuits and Sensors</h3>
+              </div>
+            </article>
+
+            <article class="photo-card">
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80" alt="Student working with technology" />
+              <div class="photo-overlay">
+                <span>Team Build</span>
+                <h3>Hands-On Learning</h3>
+              </div>
+            </article>
+          </div>
+        </section>
 
         <section class="section-block" id="aboutSection">
           <div class="about-grid">
@@ -100,40 +144,76 @@
             </div>
 
             <div>
-              <div class="section-kicker" id="aboutKicker"></div>
-              <h2 id="aboutTitle"></h2>
-              <p id="aboutDescription"></p>
-              <div class="spec-table" id="aboutSpecs" aria-label="Club details"></div>
+              <div class="section-kicker" id="aboutKicker">About The Club</div>
+              <h2 id="aboutTitle">Where curiosity turns into working machines.</h2>
+              <p id="aboutDescription">
+                The club is designed for students who want to learn by building. Some members focus on code, some on circuits, some on design, and some just show up ready to learn. Together, the group turns ideas into working robotic systems.
+              </p>
+              <div class="spec-table" id="aboutSpecs" aria-label="Club details">
+                <div class="spec-row"><strong>Experience</strong><span>No experience required</span></div>
+                <div class="spec-row"><strong>Tracks</strong><span>Beginner to advanced</span></div>
+                <div class="spec-row"><strong>Tools</strong><span>Arduino, CAD, sensors, code</span></div>
+                <div class="spec-row"><strong>Focus</strong><span>Autonomy, AI, electronics</span></div>
+                <div class="spec-row"><strong>Cost</strong><span>Free student club participation</span></div>
+              </div>
             </div>
           </div>
         </section>
 
         <section class="section-block" id="processSection">
           <div class="section-header">
-            <div class="section-kicker" id="processKicker"></div>
-            <h2 id="processTitle"></h2>
-            <p id="processDescription"></p>
+            <div class="section-kicker" id="processKicker">Club Process</div>
+            <h2 id="processTitle">From idea to robot.</h2>
+            <p id="processDescription">Members move through a practical build cycle that mirrors real robotics development.</p>
           </div>
 
-          <div class="process-grid" id="processGrid"></div>
+          <div class="process-grid" id="processGrid">
+            <article class="content-card">
+              <span class="card-number">Step 01</span>
+              <div class="card-icon">R</div>
+              <h3>Research</h3>
+              <p>Study the problem, choose sensors, define the goal, and sketch a build direction.</p>
+            </article>
+
+            <article class="content-card">
+              <span class="card-number">Step 02</span>
+              <div class="card-icon">B</div>
+              <h3>Build</h3>
+              <p>Assemble the frame, wire components, design parts, and prepare the robot platform.</p>
+            </article>
+
+            <article class="content-card">
+              <span class="card-number">Step 03</span>
+              <div class="card-icon">P</div>
+              <h3>Program</h3>
+              <p>Write control logic, test navigation, tune behavior, and add automation features.</p>
+            </article>
+
+            <article class="content-card">
+              <span class="card-number">Step 04</span>
+              <div class="card-icon">C</div>
+              <h3>Compete</h3>
+              <p>Showcase the build, prepare for events, and improve through testing and teamwork.</p>
+            </article>
+          </div>
         </section>
 
         <section class="section-block">
           <div class="video-panel" aria-label="Robotics showcase preview">
             <button class="play-button" type="button" data-scroll="projectsSection" aria-label="View projects">▶</button>
             <div class="video-caption">
-              <div class="section-kicker" id="showcaseKicker"></div>
-              <h2 id="showcaseTitle"></h2>
-              <p id="showcaseDescription"></p>
+              <div class="section-kicker" id="showcaseKicker">Showcase Preview</div>
+              <h2 id="showcaseTitle">Explore what members can build.</h2>
+              <p id="showcaseDescription">Use the project area to see robotics tracks, build categories, and club learning paths.</p>
             </div>
           </div>
         </section>
 
         <section class="section-block" id="projectsSection">
           <div class="section-header">
-            <div class="section-kicker" id="projectsKicker"></div>
-            <h2 id="projectsTitle"></h2>
-            <p id="projectsDescription"></p>
+            <div class="section-kicker" id="projectsKicker">Project Focus</div>
+            <h2 id="projectsTitle">Where innovation meets automation.</h2>
+            <p id="projectsDescription">Choose a focus area and explore the robotics builds the club can grow around.</p>
           </div>
 
           <div class="filters" aria-label="Project filters" id="projectFilters">
@@ -144,45 +224,111 @@
             <button class="chip" data-filter="beginner">Beginner</button>
           </div>
 
-          <div class="focus-grid" id="projectGrid"></div>
+          <div class="focus-grid" id="projectGrid">
+            <article class="content-card">
+              <div class="card-icon">R</div>
+              <h3>Maze Solver Bot</h3>
+              <p>A compact robot that uses sensors and pathfinding logic to escape a maze.</p>
+              <div class="tag-list">
+                <span class="tag">competition</span>
+                <span class="tag">hardware</span>
+                <span class="tag">beginner</span>
+              </div>
+            </article>
+
+            <article class="content-card">
+              <div class="card-icon">R</div>
+              <h3>Object Sorting Arm</h3>
+              <p>A robotic arm that separates objects by color using a camera and servo control.</p>
+              <div class="tag-list">
+                <span class="tag">ai</span>
+                <span class="tag">hardware</span>
+              </div>
+            </article>
+
+            <article class="content-card">
+              <div class="card-icon">R</div>
+              <h3>Line Follower Racer</h3>
+              <p>A speed-focused robot designed to follow a track using infrared sensors.</p>
+              <div class="tag-list">
+                <span class="tag">competition</span>
+                <span class="tag">beginner</span>
+              </div>
+            </article>
+          </div>
         </section>
 
         <section class="section-block" id="eventsSection">
           <div class="section-header">
-            <div class="section-kicker" id="eventsKicker"></div>
-            <h2 id="eventsTitle"></h2>
-            <p id="eventsDescription"></p>
+            <div class="section-kicker" id="eventsKicker">Mission Calendar</div>
+            <h2 id="eventsTitle">Club events and build sessions.</h2>
+            <p id="eventsDescription">Keep track of meetings, workshops, build nights, and competition preparation.</p>
           </div>
 
-          <div class="event-list" id="eventList"></div>
+          <div class="event-list" id="eventList">
+            <article class="event-item">
+              <div class="date-box"><small>SEP</small><span>12</span></div>
+              <div>
+                <h3>Kickoff Meeting</h3>
+                <p>Meet the team, choose project groups, and review the competition calendar.</p>
+                <p><strong>Location:</strong> Room 214 - Engineering Lab</p>
+              </div>
+              <button class="btn btn-secondary" type="button">Interested</button>
+            </article>
+          </div>
         </section>
 
         <section class="section-block" id="teamSection">
           <div class="section-header">
-            <div class="section-kicker" id="teamKicker"></div>
-            <h2 id="teamTitle"></h2>
-            <p id="teamDescription"></p>
+            <div class="section-kicker" id="teamKicker">Crew</div>
+            <h2 id="teamTitle">Club leadership structure.</h2>
+            <p id="teamDescription">These are default officer cards. Replace them with the actual MSU Denver Robotics Club officers when ready.</p>
           </div>
 
-          <div class="team-grid" id="teamGrid"></div>
+          <div class="team-grid" id="teamGrid">
+            <article class="content-card team-card">
+              <div class="avatar">PR</div>
+              <h3>President</h3>
+              <p>Coordinates the club, meetings, and official student organization direction.</p>
+            </article>
+
+            <article class="content-card team-card">
+              <div class="avatar">PL</div>
+              <h3>Programming Lead</h3>
+              <p>Guides coding, automation logic, AI/vision experiments, and software testing.</p>
+            </article>
+
+            <article class="content-card team-card">
+              <div class="avatar">ML</div>
+              <h3>Mechanical Lead</h3>
+              <p>Helps with frame design, prototyping, fabrication, and physical build quality.</p>
+            </article>
+          </div>
         </section>
 
         <section class="section-block" id="faqSection">
           <div class="section-header">
-            <div class="section-kicker" id="faqKicker"></div>
-            <h2 id="faqTitle"></h2>
-            <p id="faqDescription"></p>
+            <div class="section-kicker" id="faqKicker">FAQ</div>
+            <h2 id="faqTitle">Questions before joining?</h2>
+            <p id="faqDescription">Here are the common questions new members usually have.</p>
           </div>
 
-          <div class="faq-list" id="faqList"></div>
+          <div class="faq-list" id="faqList">
+            <article class="faq-item open">
+              <button class="faq-question" type="button"><span>Do I need robotics experience?</span><span>+</span></button>
+              <div class="faq-answer">No. Beginners are welcome. The club can support students who are just starting as well as students who already have coding, electronics, or design experience.</div>
+            </article>
+          </div>
         </section>
 
         <section class="section-block" id="contactSection">
           <div class="contact-grid">
             <div class="content-card contact-info">
-              <div class="section-kicker" id="contactKicker"></div>
-              <h2 id="contactTitle"></h2>
-              <p id="contactDescription"></p>
+              <div class="section-kicker" id="contactKicker">Get Started</div>
+              <h2 id="contactTitle">Ready to build with the club?</h2>
+              <p id="contactDescription">
+                Submit your interest here, or register a demo member account using the Register button at the top. This section can later connect to a real form or database.
+              </p>
               <div class="hero-actions">
                 <button class="btn btn-secondary" data-route="register">Register Account</button>
                 <button class="btn btn-secondary" data-route="login">Member Login</button>
@@ -201,6 +347,7 @@
                     <input id="email" type="email" autocomplete="email" required />
                   </label>
                 </div>
+
                 <div class="form-grid">
                   <label>
                     Experience level
@@ -211,6 +358,7 @@
                       <option>Advanced</option>
                     </select>
                   </label>
+
                   <label>
                     Main interest
                     <select id="interest" required>
@@ -223,10 +371,12 @@
                     </select>
                   </label>
                 </div>
+
                 <label>
                   Why do you want to join?
                   <textarea id="reason" required></textarea>
                 </label>
+
                 <div class="hero-actions">
                   <button class="btn btn-primary" type="submit">Submit Interest</button>
                   <button class="btn btn-secondary admin-only hidden" type="button" id="clearMembers">Clear Demo Sign-Ups</button>
@@ -248,15 +398,18 @@
             <p>
               Public visitors can explore the main site without logging in. Members can access the dashboard, and admins can manage site content, events, projects, FAQs, team cards, sign-ups, and theme colors.
             </p>
+
             <div class="notice">
               Demo accounts are listed here for testing. Real admin security should be connected to Firebase, Supabase, Auth0, or a backend before official use.
             </div>
+
             <div class="demo-accounts" aria-label="Demo login accounts">
               <div class="demo-account">
                 <strong>Admin Demo</strong>
                 Email: admin@msudenver.edu<br />
                 Password: Admin123!
               </div>
+
               <div class="demo-account">
                 <strong>Member Demo</strong>
                 Email: member@msudenver.edu<br />
@@ -268,17 +421,21 @@
           <div class="auth-panel">
             <div class="section-kicker">Sign In</div>
             <h2>Welcome back.</h2>
+
             <form id="loginForm">
               <label>
                 Email
                 <input id="loginEmail" type="email" autocomplete="email" required />
               </label>
+
               <label>
                 Password
                 <input id="loginPassword" type="password" autocomplete="current-password" required />
               </label>
+
               <button class="btn btn-primary" type="submit">Log In</button>
             </form>
+
             <p class="auth-switch">New here? <button type="button" data-route="register">Register instead</button></p>
           </div>
         </div>
@@ -294,6 +451,7 @@
             <p>
               Registration creates a non-admin member account in this browser demo. After registering, you can log in and access the member dashboard.
             </p>
+
             <div class="notice">
               Static GitHub Pages cannot protect real passwords by itself. This registration is for prototype/demo use until a backend is connected.
             </div>
@@ -302,19 +460,23 @@
           <div class="auth-panel">
             <div class="section-kicker">New Member</div>
             <h2>Register interest.</h2>
+
             <form id="registerForm">
               <label>
                 Full name
                 <input id="registerName" type="text" autocomplete="name" required />
               </label>
+
               <label>
                 Email
                 <input id="registerEmail" type="email" autocomplete="email" required />
               </label>
+
               <label>
                 Password
                 <input id="registerPassword" type="password" autocomplete="new-password" minlength="6" required />
               </label>
+
               <label>
                 Main interest
                 <select id="registerInterest" required>
@@ -326,8 +488,10 @@
                   <option>Competition Team</option>
                 </select>
               </label>
+
               <button class="btn btn-primary" type="submit">Create Member Account</button>
             </form>
+
             <p class="auth-switch">Already registered? <button type="button" data-route="login">Log in instead</button></p>
           </div>
         </div>
@@ -348,11 +512,13 @@
             <h3 id="dashboardEvents">0</h3>
             <p>Events available for club members.</p>
           </article>
+
           <article class="content-card">
             <span class="card-number">Projects</span>
             <h3 id="dashboardProjects">0</h3>
             <p>Project tracks currently listed on the site.</p>
           </article>
+
           <article class="content-card">
             <span class="card-number">Access</span>
             <h3 id="dashboardRole">Member</h3>
@@ -377,7 +543,7 @@
         <div class="admin-section">
           <div class="section-header">
             <h2>Site Content Editor</h2>
-            <p>Edit major site text, lists, cards, projects, events, FAQs, team cards, and theme colors.</p>
+            <p>Edit major site text, lists, cards, images, projects, events, FAQs, team cards, and theme colors.</p>
           </div>
 
           <div class="editor-grid">
@@ -390,6 +556,7 @@
               <h3>Full Site JSON Editor</h3>
               <p>This gives admin access to modify nearly every content item in one place. Edit carefully, then apply.</p>
               <textarea class="json-editor" id="siteJsonEditor" spellcheck="false"></textarea>
+
               <div class="hero-actions">
                 <button class="btn btn-primary" type="button" id="applyJsonButton">Apply JSON</button>
                 <button class="btn btn-secondary" type="button" id="downloadJsonButton">Download JSON</button>
@@ -408,48 +575,58 @@
           <div class="admin-grid">
             <article class="content-card">
               <h3>Add Event</h3>
+
               <form id="adminEventForm">
                 <div class="form-grid">
                   <label>
                     Month
                     <input id="adminEventMonth" type="text" maxlength="3" placeholder="SEP" required />
                   </label>
+
                   <label>
                     Day
                     <input id="adminEventDay" type="text" maxlength="2" placeholder="12" required />
                   </label>
                 </div>
+
                 <label>
                   Event title
                   <input id="adminEventTitle" type="text" required />
                 </label>
+
                 <label>
                   Details
                   <textarea id="adminEventDetails" required></textarea>
                 </label>
+
                 <label>
                   Location
                   <input id="adminEventLocation" type="text" required />
                 </label>
+
                 <button class="btn btn-primary" type="submit">Add Event</button>
               </form>
             </article>
 
             <article class="content-card">
               <h3>Add Project</h3>
+
               <form id="adminProjectForm">
                 <label>
                   Project title
                   <input id="adminProjectTitle" type="text" required />
                 </label>
+
                 <label>
                   Description
                   <textarea id="adminProjectDescription" required></textarea>
                 </label>
+
                 <label>
                   Tags
                   <input id="adminProjectTags" type="text" placeholder="competition, hardware, beginner" required />
                 </label>
+
                 <button class="btn btn-primary" type="submit">Add Project</button>
               </form>
             </article>
@@ -457,6 +634,7 @@
             <article class="content-card">
               <h3>Admin Tools</h3>
               <p>Reset demo data or clear submitted interest forms.</p>
+
               <div class="hero-actions">
                 <button class="btn btn-secondary" id="resetDemoData" type="button">Reset Demo Data</button>
                 <button class="btn btn-danger" id="clearAllMembers" type="button">Clear Sign-Ups</button>
@@ -470,6 +648,7 @@
             <h2>Submitted Sign-Ups</h2>
             <p>Only admins can view this demo list.</p>
           </div>
+
           <div class="admin-list" id="adminMemberList"></div>
         </div>
 
@@ -478,6 +657,7 @@
             <h2>Manage Events</h2>
             <p>Delete demo events from the visible events list.</p>
           </div>
+
           <div class="admin-list" id="adminEventList"></div>
         </div>
 
@@ -486,6 +666,7 @@
             <h2>Manage Projects</h2>
             <p>Delete demo projects from the visible project list.</p>
           </div>
+
           <div class="admin-list" id="adminProjectList"></div>
         </div>
       </div>
